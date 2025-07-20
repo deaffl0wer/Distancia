@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galerie par Année sans Rognage</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #444;
+    }
+    .year-group {
+      margin-bottom: 50px;
+    }
+    .year-group h2 {
+      border-left: 4px solid #448aff;
+      padding-left: 10px;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    .photo-grid {
+        column-count: 6; /* plus de colonnes = images plus petites */
+        column-gap: 8px;
+    }
+
+    @media (max-width: 1200px) {
+        .photo-grid {
+            column-count: 4;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .photo-grid {
+            column-count: 2;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .photo-grid {
+            column-count: 1;
+        }
+    }
+
+    .photo {
+      width: 100%;
+      margin-bottom: 10px;
+      break-inside: avoid;
+      border-radius: 5px;
+      border: 2px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      display: block;
+    }
+    .photo:hover {
+      transform: scale(1.03);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Galerie de Souvenirs par Année</h1>
+  <div id="galerie"></div>
+
+  <script>
+    const photos = [
+      { src: "photo1.jpg", date: "2024-01-14" },
+      { src: "photo2.jpg", date: "2023-05-22" },
+      { src: "photo3.jpg", date: "2024-03-01" },
+      { src: "photo4.jpg", date: "2023-04-10" },
+      { src: "photo5.jpg", date: "2022-05-15" },
+      { src: "photo6.jpg", date: "2024-06-05" },
+      { src: "photo7.jpg", date: "2022-06-07" },
+      { src: "photo8.jpg", date: "2023-07-10" },
+      { src: "photo9.jpg", date: "2022-08-12" },
+      { src: "photo10.jpg", date: "2024-09-01" }
+    ];
+
+    // Grouper par année
+    const grouped = {};
+    photos.forEach(p => {
+      const year = new Date(p.date).getFullYear();
+      if (!grouped[year]) grouped[year] = [];
+      grouped[year].push(p);
+    });
+
+    // Trier années décroissantes
+    const years = Object.keys(grouped).map(y => parseInt(y)).sort((a,b) => b - a);
+
+    const galerie = document.getElementById("galerie");
+
+    years.forEach(year => {
+      const section = document.createElement("section");
+      section.classList.add("year-group");
+
+      const h2 = document.createElement("h2");
+      h2.textContent = year;
+      section.appendChild(h2);
+
+      const grid = document.createElement("div");
+      grid.classList.add("photo-grid");
+
+      grouped[year].forEach(photo => {
+        const img = document.createElement("img");
+        img.src = `/images/Mur de Souvenirs/${photo.src}`;
+        img.alt = `Photo ${year}`;
+        img.classList.add("photo");
+        grid.appendChild(img);
+      });
+
+      section.appendChild(grid);
+      galerie.appendChild(section);
+    });
+  </script>
+
+</body>
+</html>
