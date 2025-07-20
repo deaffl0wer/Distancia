@@ -1,0 +1,412 @@
+/* -------------------------
+   Polices personnalisées
+-------------------------- */
+@font-face {
+  font-family: 'Title';
+  src: url('fonts/DarlingGirlDemoRegular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Links';
+  src: url('fonts/FamiljenGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nombres';
+  src: url('fonts/BodoniFLF-Bold.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'AtleHaas';
+  src: url('fonts/AlteHaasGroteskBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aubrey';
+  src: url('fonts/AUBREY1__.TTF') format('truetype');
+}
+
+/* -------------------------
+   Structure de base
+-------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/fleurs.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* -------------------------
+   Barre de navigation
+-------------------------- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #acdc9d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+
+.site-title {
+  font-family: 'Title', serif;
+  font-size: 35px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Links', sans-serif;
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+
+/* -------------------------
+   Présentation
+-------------------------- */
+.presentation {
+    background-color: #f9fbfd;
+    margin-top: 60px;
+    padding-left: 80px;
+    font-family: 'AtleHaas', sans-serif;
+}
+
+.fleur-blanche2 {
+    margin-left: 500px;
+    margin-top: -45px;
+    width: 90px;
+}
+
+.explications {
+    background-color: rgba(172, 220, 157, 0.5);
+}
+
+.explications h2 {
+    margin : 0 0;
+    font-family: 'AtleHaas', sans-serif;
+}
+
+
+.organisation {
+    background-color: #f9fbfd;
+    font-size: 20px;
+    padding-left: 150px;
+}
+
+.organisation p {
+    margin-left: 50px; 
+    text-align: justify; 
+    font-size: 17px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+/* -------------------------
+   Lettres
+-------------------------- */
+#letters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  max-width: calc((150px * 6) + (20px * 5)); /* 6 lettres + 5 gaps */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.letter {
+  width: 150px;
+  height: 100px;
+  border-radius: 6px;
+  position: relative;
+  background-color: #ffe066; /* jaune par défaut */
+  color: #333;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.letter:hover {
+  transform: scale(1.05);
+}
+
+/* Enveloppe fermée */
+.upcoming {
+  background-color: #ffe066; /* jaune */
+  color: #555;
+}
+
+/* Lettre disponible (ouverte) */
+.available {
+  background-color: #81c784; /* vert */
+  color: white;
+}
+
+/* Enveloppe animée pour jour J */
+.available.today {
+  animation: pulse 1.5s infinite;
+}
+
+
+/* Dessin du rabat (triangle) */
+.letter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  border-top: 50px solid rgba(255, 255, 255, 0.3);
+  transform-origin: top center;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+/* Rabat vert si lettre ouverte */
+.available::before {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+
+/* Rabat jaune si lettre fermée */
+.upcoming::before {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.letter.available:hover::before {
+  transform: rotateX(-30deg); /* ouverture légère vers le haut */
+}
+
+/* Animation pour jour J */
+@keyframes pulse {
+  0% { box-shadow: 0 0 8px 2px #66bb6a; }
+  50% { box-shadow: 0 0 18px 6px #43a047; }
+  100% { box-shadow: 0 0 8px 2px #66bb6a; }
+}
+
+#message {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ff6b6b;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#message.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------
+   Footer
+-------------------------- */
+
+.footer {
+  background-color: #acdc9d;
+  padding: 40px 20px 20px;
+  text-align: center;
+  font-family: 'Links', sans-serif;
+  color: black;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* gauche - centre - droite */
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer-column a:hover {
+  opacity: 0.6;
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+#left {
+  align-items: flex-start;  /* Aligner à gauche */
+}
+
+#right {
+  align-items: flex-end;    /* Aligner à droite */
+}
+
+.logo {
+  height: 150px;
+}
+
+.scroll-top-container {
+  margin-top: 30px;
+}
+
+.scroll-top-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background-color: #eaeaea;
+}
+
+
+.scroll-top-container-between {
+  display: flex;
+  justify-content: center;
+  margin-top: -40px; /* chevauchement */
+  position: relative;
+  z-index: 2;
+}
+
+.scroll-top-wrapper {
+  position: relative;
+  height: 0; /* pas de hauteur propre */
+  z-index: 5;
+}
+
+.scroll-top-btn {
+  position: absolute;
+  top: -25px; /* chevauchement sur la section du dessus */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 25px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background-color: #eaeaea;
+}
+
+

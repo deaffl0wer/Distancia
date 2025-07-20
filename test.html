@@ -1,0 +1,49 @@
+<!-- Séparateur texte défilant -->
+    <div class="love-marquee">
+        <div class="love-track">
+        <div class="love-text">
+            Je t’aime • I love you • Te amo • Ich liebe dich • Ti amo • 愛してる • 사랑해 • Я тебя люблю • أحبك • Eu te amo • Te iubesc • Seni seviyorum • Jeg elsker dig • Jag älskar dig • Ik hou van jou • 我爱你 •
+        </div>
+        <div class="love-text">
+            Je t’aime • I love you • Te amo • Ich liebe dich • Ti amo • 愛してる • 사랑해 • Я тебя люблю • أحبك • Eu te amo • Te iubesc • Seni seviyorum • Jeg elsker dig • Jag älskar dig • Ik hou van jou • 我爱你 •
+        </div>
+        </div>
+    </div>
+
+
+    /* -------------------------
+   Texte défilant
+-------------------------- */
+
+.love-marquee {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f9fbfd;
+  padding: 25px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.love-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-marquee 30s linear infinite;
+}
+
+.love-text {
+  white-space: nowrap;
+  padding-right: 50px;
+  font-size: 18px;
+  font-family: 'Links', sans-serif;
+  color: black;
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+

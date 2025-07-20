@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capsules Temporelles</title>
+    <link rel="stylesheet" href="lettres.css" />
+</head>
+<body>
+    <!--Barre de navigation-->
+    <div class="navbar">
+        <a href="home.html" class="site-title">Distancia</a>
+        <div class="links">
+            <a href="lettres.html" id="now">CAPSULES TEMPORELLES</a>
+            <a href="#">BOITE A EMOTIONS</a>
+            <a href="#">MUR DE SOUVENIRS</a>
+            <a href="#">BOUM BOUM</a>
+        </div>
+    </div>
+    
+    <div class="presentation">
+        <h1>CAPSULES TEMPORELLES</h1>
+    </div>
+
+    <div class="explications">
+        <img src="images/fleur blanche 2.webp" alt="image décorative" class="fleur-blanche2" />
+        <div style="margin-left: 800px; margin-right: 150px; margin-top: -49px; background-color: #507c43; background-size: cover;">
+            <div style="height: 15px;"></div>
+            <h2 style="margin-left: 20px">Quel est le principe des</h2>
+            <h2 style="margin-left: 20px; margin-top : 0px; margin-bottom: 0px;">CAPSULES TEMPORELLES ?</h2>
+            <p style="margin-left: 50px; text-align: justify; padding-right: 50px">Une capsule temporelle est un objet ou un contenant dans lequel on place des souvenirs, des messages, des objets représentatifs d'une époque, avec l’intention de les rouvrir dans le futur.</p>
+            <p style="margin-left: 50px; text-align: justify; padding-right: 50px">L’idée est de capturer un instant de vie, une émotion ou une mémoire pour soi-même ou pour quelqu’un d’autre, à redécouvrir plus tard.</p>
+            <div style="height: 30px;"></div>
+        </div>
+    </div>
+
+    <div class="organisation">
+        <img src="images/washi tape vert.png" alt="image décorative" style="margin-left: 1150px; margin-top: -30px; margin-bottom: 0px; width: 180px; transform: rotate(5deg);"/>
+        <h1 style="font-family: 'AtleHaas', sans-serif; margin-top: 0px;">ADAPTATION</h1>
+        <p>Pour toi, j'ai adapté ce concept de capsules temporelles en LETTRES.</p>
+        <p>Le principe est simple : j'ai écris des lettres spécialement pour toi.</p>  
+        <p>Chacune d'elles ne peut être ouverte qu'à une date précise.</p>
+        <p>Si tu essaies de les ouvrir avant leur date ou d'y accéder par n'importe quel moyen... IMPOSSIBLE.</p>
+        <p>Elles sont vérouillées à double tour ;)</p>
+        <div style="height: 30px;"></div>
+    </div>
+
+
+    <div style="font-family: 'AtleHaas', sans-serif; font-size: 45px; text-align: center; color: #acdc9d;">LETTRES</div>
+
+    <div id="message" class="hidden"></div>
+    <div id="letters-container">
+        <!-- Lettres (ordre arbitraire dans le HTML) -->
+        <div class="letter" data-date="2025-07-19" data-title="Lettre 1" data-file="lettre1.pdf"></div>
+        <div class="letter" data-date="2025-07-25" data-title="Lettre 2" data-file="lettre2.pdf"></div>
+        <div class="letter" data-date="2025-07-05" data-title="Lettre 3" data-file="lettre3.pdf"></div>
+        <div class="letter" data-date="2025-08-01" data-title="Lettre 4" data-file="lettre4.pdf"></div>
+        <div class="letter" data-date="2025-07-18" data-title="Lettre 5" data-file="lettre5.pdf"></div>
+        <div class="letter" data-date="2025-07-16" data-title="Lettre 6" data-file="lettre6.pdf"></div>
+        <div class="letter" data-date="2025-07-05" data-title="Lettre 3" data-file="lettre3.pdf"></div>
+        <div class="letter" data-date="2025-08-01" data-title="Lettre 4" data-file="lettre4.pdf"></div>
+        <div class="letter" data-date="2025-07-18" data-title="Lettre 5" data-file="lettre5.pdf"></div>
+        <div class="letter" data-date="2025-07-16" data-title="Lettre 6" data-file="lettre6.pdf"></div>
+    </div>
+
+    <script src="capsules_temporelles.js"></script>
+
+
+
+
+
+    <div class="scroll-top-wrapper">
+        <button onclick="scrollToTop()" class="scroll-top-btn">RETOUR EN HAUT &#8593;</button>
+    </div>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column" id="left">
+                <a href="lettres.html">CAPSULES TEMPORELLES</a>
+                <a href="#capsules">BOITE A EMOTIONS</a>
+                <a href="#emotions">MUR DE SOUVENIRS</a>
+                <a href="#musiques">BOUM BOUM</a>
+            </div>
+
+            <div class="footer-center">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <p class="copyright">© DISTANCIA 2025</p>
+            </div>
+
+            <div class="footer-column" id="right">
+                <a href="#apropos">A PROPOS</a>
+                <a href="#prive">PRIVE</a> 
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISTANCIA</title>
+    <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+    <!--Barre de navigation-->
+    <div class="navbar">
+        <a href="home.html" class="site-title">Distancia</a>
+        <div class="links">
+            <a href="lettres.html">CAPSULES TEMPORELLES</a>
+            <a href="#">BOITE A EMOTIONS</a>
+            <a href="#">MUR DE SOUVENIRS</a>
+            <a href="#">BOUM BOUM</a>
+        </div>
+    </div>
+
+    
+    <!--Texte de BIENVENUE-->
+    <div class="text-bienvenue">
+        <h1 id="titre-principal">Bienvenue sur Distancia !</h1>
+        <p>Parce que l’année prochaine, je ne serai pas à côté de toi.</p>
+        <p>Parce que chaque jour loin de toi sera un défi.</p>
+        <p>Parce que même à des kilomètres, je t’aimerai toujours aussi fort.</p>
+        <div style="height: 6px;"></div>
+        <p>Ce site, c’est notre cocon virtuel.</p>
+        <p>Un endroit pour que tu n’oublies jamais combien tu comptes pour moi.</p>
+        <p>Ici, tu trouveras des mots d’amour, des souvenirs qu’on a créés, des photos qui font sourire,</p>
+        <p>et des petits bouts de moi, pour que tu n’aies jamais à chercher loin pour me retrouver.</p>
+        <div style="height: 6px;"></div>
+        <p>Même loin, je suis là.</p>
+        <p>Dans chaque texte, chaque image, chaque chanson.</p>
+        <p>Et chaque jour qui passe nous rapproche un peu plus des retrouvailles.</p>
+        <div style="height: 6px;"></div>
+        <p>Je t’aime.</p>
+        <p>Toujours, malgré la distance.</p>
+        <p>Et pour toujours, au-delà du temps &lt;3</p>
+    </div>
+
+    <!--Compteur de jours-->
+    <div class="counter">
+        <div class="day-counter" id="dayCounter"></div>
+        <script>
+            function updateDayCounter() {
+                const startDate = new Date("2023-01-07");
+                const today = new Date();
+                const diffTime = today - startDate;
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+                const counterElement = document.getElementById("dayCounter");
+                if (counterElement) {
+                    counterElement.innerHTML = `<span class="day-number">${diffDays}</span> <span class="day-text">jour${diffDays > 1 ? "s" : ""} d'amour 🤍</span>`;
+                }
+            }
+
+            updateDayCounter();
+        </script>
+    </div>
+
+    <!--Explications rapides-->
+    <div class="explications">
+        <img src="images/washi tape.png" alt="image décorative" class="washi-tape" />
+        <h1>DISTANCIA EST NOTRE</h1>
+        <h1>COCON VIRTUEL À NOUS</h1>
+        
+        <div class="grid-buttons">
+            <div class="button_block">
+                <div class="button_links">
+                    <a href="lettres.html">CAPSULES TEMPORELLES</a>
+                </div>
+                <h4>Explications Capsules temporelles</h4>
+            </div>
+            <div class="button_block">
+                <div class="button_links">
+                    <a href="#">BOITE A EMOTIONS</a>
+                </div>
+                <h4>Explications Boite à émotions</h4>
+            </div>
+            <div class="button_block">
+                <div class="button_links">
+                    <a href="#">MUR DE SOUVENIRS</a>
+                </div>
+                <h4>Explications Mur de Souvenirs</h4>
+            </div>
+            <div class="button_block">
+                <div class="button_links">
+                    <a href="#">BOUM BOUM</a>
+                </div>
+                <h4>Explications Boum Boum</h4>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Cœur animé-->
+    <section id="heart-animation">
+        <canvas id="canvas"></canvas>
+        <script src="heart_interactive.js"></script>
+    </section> 
+
+
+    <!--Ma Mission-->
+    <div class="mission">
+        <img src="images/trombone.webp" alt="image décorative" class="trombone" />
+        <div style="height: 50px;"></div>
+        <h1>MA</h1>
+        <h1>MISSION</h1>
+        <div style="height: 10px;"></div>
+        <h3>• NE PAS M'OUBLIER</h3>
+        <h3>• FAIRE EVOLUER NOTRE LIEN</h3>
+        <h3>• RENFORCER NOTRE AMOUR</h3>
+        <div style="height: 250px;"></div>
+    </div>
+
+
+    <!--Carré 4x4-->
+    <div class="separator">RESSEMBLANCES</div>
+
+    <section id="grid-section">
+        <div class="grid">
+            <div class="card"><div class="card-inner"><div class="card-front">Animal</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Animal" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Endroit</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Endroit" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Plante</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Plante" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Personnage</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Personnage" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Saison</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Saison" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Passion</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Passion" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Nourriture</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Nourriture" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Couleur</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Couleur" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Poisson</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Poisson" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Objet</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Objet" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Sport</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Sport" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Humeur</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Humeur" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Chanson</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Chanson" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Souvenir</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Souvenir" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Film</div><div class="card-back"><img src="https://via.placeholder.com/100?text=Film" alt=""></div></div></div>
+            <div class="card"><div class="card-inner"><div class="card-front">Rêve</div><div class="card-back"><img src="https://via.placeholder.com/100?text=R%C3%AAve" alt=""></div></div></div>
+        </div>
+    </section>
+
+    <script>
+        // Animation de retournement
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+    </script>
+
+
+    <!-- Quelques photos -->
+    <div class="photos">
+        <img src="images/punaise.png" alt="image décorative" class="punaise" />
+        <div class="text-photo">
+            <h1>QUELQUES</h1>
+            <h1>PHOTOS</h1>
+        </div>
+        <div class="photo-gallery">
+            <img src="/images/1.jpg" alt="Photo 1">
+            <img src="/images/2.jpg" alt="Photo 2">
+            <img src="/images/3.jpg" alt="Photo 3">
+        </div>
+    </div>
+
+
+    <!--Je t'aime parce que...-->
+    <div class="jtm">
+        <p style="font-family: 'AlteHaas', sans-serif; font-size: 28px; color: white; margin-top : 20px; margin-bottom: -35px; text-align: center;">JE T'AIME CAR, TU ES</p>
+        <section class="typewriter-section">
+            <p class="typewriter-text">
+                <span id="typewriter-word"></span><span class="cursor">|</span>
+            </p>
+        </section>
+    </div>
+
+    <script>
+        const words = ["attentionné", "beau", "sincère", "intelligent", "unique", "drôle", "patient", "musclé", "apaisant", "gentil", "sécuritaire", "loyal", "présent", "lumineux", "calme", "fort", "tendre", "optimiste", "charmant", "romantique", "passionné", "protecteur", "brillant", "authentique", "créatif", "MON AMOUR", "MON COEUR", "MON BIBOUUU"];
+        const wordElement = document.getElementById("typewriter-word");
+
+        let wordIndex = 0;
+        let letterIndex = 0;
+        let typing = true;
+
+        function typeWord() {
+            const currentWord = words[wordIndex];
+
+            if (typing) {
+                wordElement.textContent = currentWord.slice(0, letterIndex + 1);
+                letterIndex++;
+                if (letterIndex === currentWord.length) {
+                    typing = false;
+                    setTimeout(typeWord, 1000); // Pause après mot complet
+                    return;
+                }
+            } else {
+                wordElement.textContent = currentWord.slice(0, letterIndex - 1);
+                letterIndex--;
+                if (letterIndex === 0) {
+                    typing = true;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(typeWord, 300); // Pause avant nouveau mot
+                    return;
+                }
+            }
+
+            setTimeout(typeWord, typing ? 150 : 80); // Vitesse d’écriture/suppression
+        }
+
+        typeWord();
+    </script>
+
+    <div class="scroll-top-wrapper">
+        <button onclick="scrollToTop()" class="scroll-top-btn">RETOUR EN HAUT &#8593;</button>
+    </div>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column" id="left">
+                <a href="lettres.html">CAPSULES TEMPORELLES</a>
+                <a href="#capsules">BOITE A EMOTIONS</a>
+                <a href="#emotions">MUR DE SOUVENIRS</a>
+                <a href="#musiques">BOUM BOUM</a>
+            </div>
+
+            <div class="footer-center">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <p class="copyright">© DISTANCIA 2025</p>
+            </div>
+
+            <div class="footer-column" id="right">
+                <a href="#apropos">A PROPOS</a>
+                <a href="#prive">PRIVE</a> 
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
