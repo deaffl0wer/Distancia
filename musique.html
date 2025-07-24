@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capsules Temporelles</title>
+    <link rel="stylesheet" href="musique.css" />
+</head>
+<body>
+    <!--Barre de navigation-->
+    <div class="navbar">
+        <a href="index.html" class="site-title">Distancia</a>
+        <div class="links">
+            <a href="lettres.html" id="now">CAPSULES TEMPORELLES</a>
+            <a href="emotions.html">BOITE A EMOTIONS</a>
+            <a href="photos.html">MUR DE SOUVENIRS</a>
+            <a href="musique.html">BOUM BOUM</a>
+        </div>
+    </div>
+
+    <div class="music-gallery" style="margin: 70px 0;">
+
+        <div class="music-item">
+            <img src="musiques/pochette1.jpg" alt="Pochette 1">
+            <div class="player">
+                <div class="track-info">
+                    <strong>Chanson 1</strong><br>
+                    <small>Artiste 1</small>
+                </div>
+                    <audio src="musiques/chanson1.mp3"></audio>
+                <div class="controls">
+                    <span class="current-time">0:00</span>
+                    <input type="range" class="seek-bar" value="0" min="0" step="1">
+                    <span class="duration">0:00</span>
+                </div>
+                <button class="play-btn">▶</button>
+            </div>
+        </div>
+
+        <!-- Duplique ce bloc pour d'autres musiques -->
+
+    </div>
+
+    <script>
+        document.querySelectorAll('.music-item').forEach(item => {
+        const audio = item.querySelector('audio');
+        const playBtn = item.querySelector('.play-btn');
+        const seekBar = item.querySelector('.seek-bar');
+        const currentTimeSpan = item.querySelector('.current-time');
+        const durationSpan = item.querySelector('.duration');
+
+        playBtn.addEventListener('click', () => {
+            // Pause toutes les autres pistes
+            document.querySelectorAll('audio').forEach(a => {
+                if (a !== audio) {
+                    a.pause();
+                    a.currentTime = 0;
+                    a.closest('.music-item').querySelector('.play-btn').textContent = '▶';
+                }
+            });
+
+            if (audio.paused) {
+                audio.play();
+                playBtn.textContent = '⏸';
+            } else {
+                audio.pause();
+                playBtn.textContent = '▶';
+            }
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            seekBar.max = Math.floor(audio.duration);
+            durationSpan.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            seekBar.value = Math.floor(audio.currentTime);
+            currentTimeSpan.textContent = formatTime(audio.currentTime);
+        });
+
+        seekBar.addEventListener('input', () => {
+            audio.currentTime = seekBar.value;
+        });
+
+        audio.addEventListener('ended', () => {
+            playBtn.textContent = '▶';
+        });
+        });
+
+        function formatTime(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${min}:${sec}`;
+        }
+    </script>
+
+
+
+    <div class="scroll-top-wrapper">
+        <button onclick="scrollToTop()" class="scroll-top-btn">RETOUR EN HAUT &#8593;</button>
+    </div>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column" id="left">
+                <a href="lettres.html">CAPSULES TEMPORELLES</a>
+                <a href="emotions.html">BOITE A EMOTIONS</a>
+                <a href="photos.html">MUR DE SOUVENIRS</a>
+                <a href="musique.html">BOUM BOUM</a>
+            </div>
+
+            <div class="footer-center">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <p class="copyright">© DISTANCIA 2025</p>
+            </div>
+
+            <div class="footer-column" id="right">
+                <a href="a_propos.html">A PROPOS</a>
+                <a href="#prive">PRIVE</a> 
+                <p>💌 distancia.dl.2023@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

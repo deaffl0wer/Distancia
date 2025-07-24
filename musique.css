@@ -1,0 +1,291 @@
+/* -------------------------
+   Polices personnalisées
+-------------------------- */
+@font-face {
+  font-family: 'Title';
+  src: url('fonts/DarlingGirlDemoRegular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Links';
+  src: url('fonts/FamiljenGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nombres';
+  src: url('fonts/BodoniFLF-Bold.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'AtleHaas';
+  src: url('fonts/AlteHaasGroteskBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aubrey';
+  src: url('fonts/AUBREY1__.TTF') format('truetype');
+}
+
+
+/* -------------------------
+   Structure de base
+-------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: white;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* -------------------------
+   Barre de navigation
+-------------------------- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #ceaa93;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+
+.site-title {
+  font-family: 'Title', serif;
+  font-size: 35px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Links', sans-serif;
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* -------------------------
+   Galerie de musiques
+-------------------------- */
+.music-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.music-item {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 250px;
+  padding: 15px;
+}
+
+.music-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.player {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.track-info {
+  margin-bottom: 10px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.controls input[type="range"] {
+  flex: 1;
+}
+
+.play-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 0;
+  transition: background-color 0.3s ease;
+}
+
+.play-btn:hover {
+  background-color: #95735d;
+}
+
+
+
+
+
+/* -------------------------
+   Footer
+-------------------------- */
+
+.footer {
+  background-color: #95735d;
+  padding: 40px 20px 20px;
+  text-align: center;
+  font-family: 'Links', sans-serif;
+  color: black;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* gauche - centre - droite */
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer-column a:hover {
+  opacity: 0.6;
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+#left {
+  align-items: flex-start;  /* Aligner à gauche */
+}
+
+#right {
+  align-items: flex-end;    /* Aligner à droite */
+}
+
+.logo {
+  height: 150px;
+}
+
+.scroll-top-container {
+  margin-top: 30px;
+}
+
+.scroll-top-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background-color: #eaeaea;
+}
+
+
+.scroll-top-container-between {
+  display: flex;
+  justify-content: center;
+  margin-top: -40px; /* chevauchement */
+  position: relative;
+  z-index: 2;
+}
+
+.scroll-top-wrapper {
+  position: relative;
+  height: 0; /* pas de hauteur propre */
+  z-index: 5;
+}
+
+.scroll-top-btn {
+  position: absolute;
+  top: -25px; /* chevauchement sur la section du dessus */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 25px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background-color: #eaeaea;
+}
+
+

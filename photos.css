@@ -152,6 +152,7 @@ body {
 /* -------------------------
    Disposition photos
 -------------------------- */
+
 .filters {
   text-align: center;
   margin: 40px 0;
@@ -393,7 +394,7 @@ font-family: 'Aubrey', sans-serif;
 -------------------------- */
 
 .footer {
-  background-color: #ed968c;
+  background-color: #CD5C5C;
   padding: 40px 20px 20px;
   text-align: center;
   font-family: 'Links', sans-serif;
